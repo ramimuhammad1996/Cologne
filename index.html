@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cologne Dupe House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-blur bg-blur-1"></div>
+    <div class="bg-blur bg-blur-2"></div>
+
+    <header class="hero">
+      <nav class="nav container glass">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <h1>Cologne Dupe House</h1>
+        </div>
+
+        <div class="nav-actions">
+          <button id="demoButton" class="text-btn" aria-label="Run interactive demo">Demo</button>
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">◐</button>
+          <button id="cartButton" class="cart-button" aria-label="Open cart">
+            Cart <span id="cartCount" class="pill">0</span>
+          </button>
+        </div>
+      </nav>
+
+      <section class="container hero-content">
+        <p class="eyebrow">Affordable Inspired Fragrances</p>
+        <h2>Luxury aura. <span>Dupe pricing.</span></h2>
+        <p class="hero-copy">
+          A refined destination for inspired-by colognes with modern profiles,
+          strong performance, and elegant packaging.
+        </p>
+      </section>
+    </header>
+
+    <main class="container main-layout">
+      <aside class="filters glass card">
+        <div class="panel-title-row">
+          <h3>Refine</h3>
+          <button id="resetFilters" class="text-btn">Reset</button>
+        </div>
+
+        <label>
+          Collection
+          <select id="collectionFilter">
+            <option value="all">All Collections</option>
+            <option value="fresh">Fresh</option>
+            <option value="woody">Woody</option>
+            <option value="sweet">Sweet</option>
+            <option value="spicy">Spicy</option>
+          </select>
+        </label>
+
+        <label>
+          Search by name or inspiration
+          <input id="searchInput" type="search" placeholder="e.g., Aventus" />
+        </label>
+
+        <label>
+          Max Price
+          <input id="priceFilter" type="range" min="20" max="80" value="80" />
+          <span id="priceValue">$80</span>
+        </label>
+
+        <label>
+          Sort by
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A → Z</option>
+          </select>
+        </label>
+      </aside>
+
+      <section>
+        <div class="section-heading">
+          <div>
+            <h3>Signature Dupes</h3>
+            <p id="resultsCount"></p>
+          </div>
+        </div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside id="cartPanel" class="cart-panel glass" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart" class="icon-btn" aria-label="Close cart">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <p>Total: <strong id="cartTotal">$0.00</strong></p>
+        <div class="cart-actions">
+          <button id="clearCart" class="text-btn">Clear</button>
+          <button class="checkout-button">Checkout</button>
+        </div>
+      </div>
+    </aside>
+
+    <div id="cartOverlay" class="cart-overlay" aria-hidden="true"></div>
+
+    <div id="toast" class="toast" aria-live="assertive" aria-atomic="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
